@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan Muslih & Widiya</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      background-image: url('https://drive.google.com/uc?export=view&id=11L82wmdeunsBFdt797nbpXKcd8s2R2t4');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      text-align: center;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.3em;
+    }
+    .pasangan {
+      font-size: 1.5em;
+      margin-bottom: 1em;
+    }
+    .tanggal, .lokasi {
+      font-size: 1.2em;
+      margin-bottom: 0.5em;
+    }
+    .countdown {
+      font-size: 1.5em;
+      margin: 1em 0;
+    }
+    .foto {
+      margin-top: 2rem;
+    }
+    .foto img {
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .map-link {
+      margin-top: 1.5rem;
+    }
+    .map-link a {
+      background: #fff;
+      color: #333;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .pesan-kesan {
+      margin-top: 3rem;
+    }
+    .pesan-kesan h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5em;
+    }
+    .pesan-kesan iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 500px;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Undangan Pernikahan</h1>
+    <div class="pasangan">Muslih & Widiya</div>
+    <div class="tanggal">25 Juli 2025</div>
+    <div class="lokasi">Masjid Manshurin, Santarra Utara</div>
+
+    <div class="countdown" id="countdown">Menghitung waktu...</div>
+
+    <div class="foto">
+      <img src="https://drive.google.com/uc?export=view&id=1cUZhrx_Bj0BvanHt0xsgDpzutgGcbsu7" alt="Foto Muslih & Widiya">
+    </div>
+
+    <div class="map-link">
+      <a href="https://maps.app.goo.gl/G77WJHrNvZSdDAFM9" target="_blank">Lihat Lokasi di Google Maps</a>
+    </div>
+
+    <div class="pesan-kesan">
+      <h2>Kirim Doa & Pesan</h2>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfOdOeByzHq_Kkn_PnDkFOtPXzowmjKAGFNiGb6WflpJVO09w/viewform?embedded=true" loading="lazy">Memuat…</iframe>
+    </div>
+  </div>
+
+  <script>
+    const targetDate = new Date("July 25, 2025 08:00:00").getTime();
+
+    const countdown = document.getElementById("countdown");
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        countdown.innerHTML = "Acara sedang berlangsung!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
+    };
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
